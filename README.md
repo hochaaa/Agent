@@ -44,20 +44,6 @@ npm install
 npm run dev
 ```
 
-프로젝트 루트의 `.env.local` 파일에 다음 환경변수를 설정해야 합니다.
-
-```env
-OPENAI_API_KEY=본인의_OpenAI_API_Key
-OPENAI_MODEL=gpt-5-mini
 ```
-
-실제 API 키가 포함된 `.env.local` 파일은 Git 저장소에 커밋하지 않습니다.
-
-## 검사 명령
-
-```bash
-npm run typecheck
-npm run lint
-npm test
-npm run build
+환경변수 설정은 `.env.example` 파일을 참고하세요.
 ```
