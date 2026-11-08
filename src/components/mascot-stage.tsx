@@ -26,9 +26,11 @@ export function MascotStage() {
 
     const halfWidth = item.offsetWidth / 2;
     const halfHeight = item.offsetHeight / 2;
-    const radius = orbit.clientWidth / 2;
-    const orbitCenterX = orbit.offsetLeft + radius;
-    const orbitCenterY = orbit.offsetTop + radius;
+    const stageRect = stage.getBoundingClientRect();
+    const orbitRect = orbit.getBoundingClientRect();
+    const radius = orbitRect.width / 2;
+    const orbitCenterX = orbitRect.left - stageRect.left + radius;
+    const orbitCenterY = orbitRect.top - stageRect.top + radius;
     const desiredCenterX = point.x + halfWidth;
     const desiredCenterY = point.y + halfHeight;
     const deltaX = desiredCenterX - orbitCenterX;
@@ -51,9 +53,11 @@ export function MascotStage() {
       const muhan = itemRefs.current.muhan;
       const mudang = itemRefs.current.mudang;
       if (!stage || !orbit || !muhan || !mudang) return;
-      const radius = orbit.clientWidth / 2;
-      const centerX = orbit.offsetLeft + radius;
-      const baselineY = orbit.offsetTop + orbit.clientHeight * .84;
+      const stageRect = stage.getBoundingClientRect();
+      const orbitRect = orbit.getBoundingClientRect();
+      const radius = orbitRect.width / 2;
+      const centerX = orbitRect.left - stageRect.left + radius;
+      const baselineY = orbitRect.top - stageRect.top + orbitRect.height * .84;
       setPositions((current) => current ? {
         muhan: keepInsideOrbit("muhan", current.muhan),
         mudang: keepInsideOrbit("mudang", current.mudang),

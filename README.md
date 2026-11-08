@@ -44,6 +44,4 @@ npm install
 npm run dev
 ```
 
-```
 환경변수 설정은 `.env.example` 파일을 참고하세요.
-```
